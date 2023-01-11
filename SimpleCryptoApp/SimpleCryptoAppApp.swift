@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SimpleCryptoAppApp: App {
+    @StateObject var homeViewModel = HomeViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Home(homeViewModel: homeViewModel)
         }
     }
 }

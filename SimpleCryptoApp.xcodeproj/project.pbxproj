@@ -11,6 +11,12 @@
 		4F0E0385296D639E00C05B54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E0384296D639E00C05B54 /* ContentView.swift */; };
 		4F0E0387296D639F00C05B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F0E0386296D639F00C05B54 /* Assets.xcassets */; };
 		4F0E038A296D639F00C05B54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F0E0389296D639F00C05B54 /* Preview Assets.xcassets */; };
+		4F6DA76A296E8E29002734E0 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DA769296E8E29002734E0 /* Home.swift */; };
+		4F6DA76C296E8E3E002734E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DA76B296E8E3E002734E0 /* HomeViewModel.swift */; };
+		4F8B61C2296DA8D300D4CAEB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B61C1296DA8D300D4CAEB /* Color.swift */; };
+		4F8B61C4296DE1FD00D4CAEB /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B61C3296DE1FD00D4CAEB /* Coin.swift */; };
+		4F8B61C6296DE5F800D4CAEB /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B61C5296DE5F800D4CAEB /* CoinDataService.swift */; };
+		4F8B61C8296DEB8000D4CAEB /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B61C7296DEB8000D4CAEB /* NetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		4F0E0384296D639E00C05B54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4F0E0386296D639F00C05B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F0E0389296D639F00C05B54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F6DA769296E8E29002734E0 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		4F6DA76B296E8E3E002734E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4F8B61C1296DA8D300D4CAEB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4F8B61C3296DE1FD00D4CAEB /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		4F8B61C5296DE5F800D4CAEB /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		4F8B61C7296DEB8000D4CAEB /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,11 @@
 				4F0E0382296D639E00C05B54 /* SimpleCryptoAppApp.swift */,
 				4F0E0384296D639E00C05B54 /* ContentView.swift */,
 				4F0E0386296D639F00C05B54 /* Assets.xcassets */,
+				4F8B61B8296DA76C00D4CAEB /* Core */,
+				4F8B61BC296DA7A000D4CAEB /* Utilities */,
+				4F8B61BB296DA79100D4CAEB /* Services */,
+				4F8B61B9296DA77600D4CAEB /* Models */,
+				4F8B61BA296DA78100D4CAEB /* Extensions */,
 				4F0E0388296D639F00C05B54 /* Preview Content */,
 			);
 			path = SimpleCryptoApp;
@@ -67,6 +84,79 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4F8B61B8296DA76C00D4CAEB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B61BE296DA7D400D4CAEB /* Home */,
+				4F8B61BD296DA7BA00D4CAEB /* Components */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4F8B61B9296DA77600D4CAEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B61C3296DE1FD00D4CAEB /* Coin.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4F8B61BA296DA78100D4CAEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B61C1296DA8D300D4CAEB /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F8B61BB296DA79100D4CAEB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B61C5296DE5F800D4CAEB /* CoinDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4F8B61BC296DA7A000D4CAEB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B61C7296DEB8000D4CAEB /* NetworkingManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4F8B61BD296DA7BA00D4CAEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4F8B61BE296DA7D400D4CAEB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4F8B61C0296DA7EF00D4CAEB /* ViewModels */,
+				4F8B61BF296DA7E800D4CAEB /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4F8B61BF296DA7E800D4CAEB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F6DA769296E8E29002734E0 /* Home.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F8B61C0296DA7EF00D4CAEB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4F6DA76B296E8E3E002734E0 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +167,7 @@
 				4F0E037B296D639E00C05B54 /* Sources */,
 				4F0E037C296D639E00C05B54 /* Frameworks */,
 				4F0E037D296D639E00C05B54 /* Resources */,
+				4F8B61B7296D851D00D4CAEB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -132,6 +223,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F8B61B7296D851D00D4CAEB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4F0E037B296D639E00C05B54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,6 +252,12 @@
 			files = (
 				4F0E0385296D639E00C05B54 /* ContentView.swift in Sources */,
 				4F0E0383296D639E00C05B54 /* SimpleCryptoAppApp.swift in Sources */,
+				4F8B61C4296DE1FD00D4CAEB /* Coin.swift in Sources */,
+				4F6DA76C296E8E3E002734E0 /* HomeViewModel.swift in Sources */,
+				4F8B61C8296DEB8000D4CAEB /* NetworkingManager.swift in Sources */,
+				4F8B61C6296DE5F800D4CAEB /* CoinDataService.swift in Sources */,
+				4F8B61C2296DA8D300D4CAEB /* Color.swift in Sources */,
+				4F6DA76A296E8E29002734E0 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
