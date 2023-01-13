@@ -11,6 +11,7 @@ import SwiftUI
 struct SimpleCryptoAppApp: App {
     @StateObject var homeViewModel = HomeViewModel()
 
+@State var text = ""
     var body: some Scene {
         WindowGroup {
             Home(homeViewModel: homeViewModel)
