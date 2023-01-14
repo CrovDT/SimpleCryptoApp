@@ -13,6 +13,8 @@ import Combine
         @Published var coinType: CoinDataType = .hot
         @Published var ascending = false
         @Published var searchText = ""
+         
+         @Published var selectedTab: SelectedTab = .crypto
 
         private let coinDataService = CoinDataService()
 

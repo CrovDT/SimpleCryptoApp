@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BalanceView: View {
     @Environment(\.colorScheme) var userTheme
+    @EnvironmentObject private var vm: HomeViewModel
 
     var body: some View {
         HStack {
@@ -36,6 +37,9 @@ struct BalanceView: View {
                     .foregroundColor(.theme.secondary.opacity(0.1))
             )
             .shadow(color: .theme.foreground, radius: userTheme == .dark ? 3 : 0.5)
+            .onTapGesture {
+                vm.selectedTab = .wallet
+            }
     }
 }
 

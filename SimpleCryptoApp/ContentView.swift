@@ -6,22 +6,35 @@
 //
 
 import SwiftUI
+enum SelectedTab {
+    case crypto, wallet
+}
 
 struct ContentView: View {
+    @Binding var selectedTab: SelectedTab
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-                .foregroundColor(.theme.background)
+        TabView(selection: $selectedTab) {
+            Home()
+                .tabItem {
+                    VStack {
+                        Label("Crypto", systemImage: "bitcoinsign.circle")
+                    }
+                }
+                .tag(SelectedTab.crypto)
+
+            Text("Wallet")
+                .tabItem {
+                    Label("Wallet", systemImage: "wallet.pass")
+                }
+                .tag(SelectedTab.wallet)
         }
-        .padding()
+        .tint(.theme.foreground.opacity(0.8))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(selectedTab: .constant(.wallet))
     }
 }

@@ -14,7 +14,7 @@ struct SimpleCryptoAppApp: App {
 @State var text = ""
     var body: some Scene {
         WindowGroup {
-            Home()
+            ContentView(selectedTab: $homeViewModel.selectedTab)
                 .environmentObject(homeViewModel)
         }
     }
