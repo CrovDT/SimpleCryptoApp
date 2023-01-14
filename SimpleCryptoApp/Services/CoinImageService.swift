@@ -12,13 +12,32 @@ class CoinImageService {
     @Published var image: UIImage?
 
     private var imageSubscription: AnyCancellable?
+    private let imageName: String
+    private  let coin: Coin
 
     init(coin: Coin) {
-        do {
-            try fetchImage(from: coin)
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        self.coin = coin
+        imageName = coin.id
+        getImage()
+    }
+
+    private let folderName = "coin_images"
+
+   func getImage() {
+         guard
+        let image = LocalFileManager.instance.getImage(for: folderName,
+                                                       imageName: imageName, fileExtension: ".png") else {
+             do {
+                 try fetchImage(from: coin)
+                 print("Image fetched from the Internet")
+                 return
+             } catch let error {
+                 print(error.localizedDescription)
+                 return
+             }
+         }
+       print("Image downloaded from FileManager")
+       self.image = image
     }
 
     func fetchImage(from coin: Coin) throws {
@@ -30,6 +49,8 @@ class CoinImageService {
                 guard let uiImage = uiImage else { return }
 
                 self.image = uiImage
+                LocalFileManager.instance.add(image: uiImage, for: self.folderName, fileExtension: ".png",
+                                              imageName: self.imageName)
                 self.imageSubscription?.cancel()
             })
     }
