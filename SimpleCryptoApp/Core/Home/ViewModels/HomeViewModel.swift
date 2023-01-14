@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 
-    @MainActor class HomeViewModel: ObservableObject {
+     class HomeViewModel: ObservableObject {
         @Published var allCoins: [Coin] = []
-        @Published var filterCoin: CoinDataType = .hot
+        @Published var coinType: CoinDataType = .hot
         @Published var ascending = false
         @Published var searchText = ""
 
@@ -19,7 +19,7 @@ import Combine
         private var cancellables = Set<AnyCancellable>()
 
         var filteredCoins: [Coin] {
-            switch filterCoin {
+            switch coinType {
             case .hot:
                 return allCoins
             case .marketCap:
@@ -52,8 +52,15 @@ import Combine
                 }
                 .store(in: &cancellables)
 
-            // subscribe on changing type of filtering
-//            $filterCoin
+            // subscribe on changing searching
+            $searchText
+                .combineLatest(coinDataService.$allCoins)
+                .map(filterCoins)
+                .sink { [weak self] filteredCoins in
+                    guard let self = self else { return }
+                    self.allCoins = filteredCoins
+                }
+                .store(in: &cancellables)
 
         }
 
@@ -63,6 +70,18 @@ import Combine
             } catch let error {
                 print(error)
             }
+        }
+
+        private func filterCoins(text: Published<String>.Publisher.Output,
+                                 coins: Published<[Coin]>.Publisher.Output ) -> [Coin] {
+            guard !text.isEmpty else { return coins}
+
+            let filteredCoins = coins.filter {
+                $0.id.localizedCaseInsensitiveContains(text) ||
+                $0.symbol.localizedCaseInsensitiveContains(text) ||
+                $0.name.localizedCaseInsensitiveContains(text)
+            }
+            return filteredCoins
         }
 
     }

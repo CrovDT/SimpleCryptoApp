@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CoinRow: View {
     let coin: Coin
-    @ObservedObject var vm: HomeViewModel
+    @EnvironmentObject private var vm: HomeViewModel
     var body: some View {
-        switch vm.filterCoin {
+        switch vm.coinType {
         case .price:
              hot
         case .dailyChange:
@@ -62,7 +62,7 @@ extension CoinRow {
             CoinImage(coin: coin)
             VStack(alignment: .leading) {
                 Text(coin.id.capitalized)
-                    .foregroundColor(.theme.foreground)
+                    .foregroundColor(.theme.foreground.opacity(0.85))
                     .font(.callout.weight(.bold))
                 Text(coin.symbol.uppercased())
                     .foregroundColor(.theme.secondary)
@@ -81,6 +81,6 @@ extension CoinRow {
 
 struct CoinRow_Previews: PreviewProvider {
     static var previews: some View {
-        CoinRow(coin: Coin.example, vm: HomeViewModel())
+        CoinRow(coin: Coin.example)
     }
 }

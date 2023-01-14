@@ -9,21 +9,15 @@ import SwiftUI
 
 struct InfoView: View {
     var body: some View {
-        NavigationStack {
             NavigationLink {
-                info
+                EmptyView()
             } label: {
                 Image(systemName: "info.square.fill")
                     .foregroundColor(.theme.secondary)
                     .font(.title.weight(.bold))
                     .shadow(color: .theme.foreground, radius: 4)
             }
-        }
     }
-    private var info: some View {
-        Text("a")
-    }
-
 }
 
 struct InfoView_Previews: PreviewProvider {

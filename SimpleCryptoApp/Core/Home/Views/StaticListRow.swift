@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StaticListRow: View {
-    @ObservedObject var vm: HomeViewModel
+    @EnvironmentObject private var vm: HomeViewModel
 
     var body: some View {
         headerBar
@@ -21,22 +21,22 @@ struct StaticListRow: View {
 
 extension StaticListRow {
     private var headerBar: some View {
-        HStack {
-            ListHeader(vm: vm, name: "Hot", icon: nil, coinFilterType: .hot)
-            Spacer()
-            ListHeader(vm: vm, name: "Market Cap", icon: nil, coinFilterType: .marketCap)
-            Spacer()
-            ListHeader(vm: vm, name: "Price", icon: "triangle.fill", coinFilterType: .price)
-            Spacer()
-            ListHeader(vm: vm, name: "24h Change", icon: "triangle.fill", coinFilterType: .dailyChange)
-        }
+            HStack {
+                ListHeader(name: "Hot", icon: nil, coinFilterType: .hot)
+                Spacer()
+                ListHeader(name: "Market Cap", icon: nil, coinFilterType: .marketCap)
+                Spacer()
+                ListHeader(name: "Price", icon: "triangle.fill", coinFilterType: .price)
+                Spacer()
+                ListHeader(name: "24h Change", icon: "triangle.fill", coinFilterType: .dailyChange)
+            }
     }
 
 }
 
 struct StaticListRow_Previews: PreviewProvider {
     static var previews: some View {
-        StaticListRow(vm: HomeViewModel())
+        StaticListRow()
             .previewLayout(.sizeThatFits)
     }
 }

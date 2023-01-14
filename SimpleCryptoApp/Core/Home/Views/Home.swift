@@ -8,47 +8,54 @@
 import SwiftUI
 
 struct Home: View {
-    @ObservedObject var homeViewModel: HomeViewModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+    @State  var path = NavigationPath()
+    @State private var showSearchView = false
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 Color.theme.background
                     .ignoresSafeArea()
+
                 VStack {
-                    HeaderView()
+                    HStack {
+                        InfoView()
+                        Spacer()
+                        searchIcon
+                    }
+                    .padding()
+
+                    BalanceView()
                         .padding()
 
-                        BalanceView()
-                            .padding()
-
-                        StaticListRow(vm: homeViewModel)
-
-                        coins
-
+                    StaticListRow()
+                    CoinListView()
                 }
             }
+            .navigationDestination(isPresented: $showSearchView) {
+                SearchView()
+            }
         }
+
     }
 }
 
 extension Home {
-    private var coins: some View {
-        List {
-            ForEach(homeViewModel.filteredCoins) { coin in
-                CoinRow(coin: coin, vm: homeViewModel)
+    private var searchIcon: some View {
+        Image(systemName: "magnifyingglass")
+            .shadow(color: .theme.foreground, radius: 3)
+            .foregroundColor(.theme.secondary)
+            .onTapGesture {
+                homeViewModel.coinType = .hot
+                showSearchView = true
             }
-            .listRowSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .refreshable {
-            homeViewModel.updateCoins()
-        }
     }
+
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(homeViewModel: HomeViewModel())
+        Home()
     }
 }

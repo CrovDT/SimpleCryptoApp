@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BalanceView: View {
     @Environment(\.colorScheme) var userTheme
+
     var body: some View {
         HStack {
             VStack {

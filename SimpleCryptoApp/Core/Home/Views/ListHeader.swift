@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct ListHeader: View {
-    @ObservedObject var vm: HomeViewModel
+    @EnvironmentObject private var vm: HomeViewModel
 
     let name: String
     let icon: String?
@@ -15,7 +15,7 @@ struct ListHeader: View {
     let coinFilterType: CoinDataType
 
     var show: Bool {
-        if vm.filterCoin == coinFilterType {
+        if vm.coinType == coinFilterType {
             return true
         } else {
             return false
@@ -34,7 +34,7 @@ struct ListHeader: View {
         .frame(height: 15)
         .onTapGesture {
             if !show {
-                vm.filterCoin = coinFilterType
+                vm.coinType = coinFilterType
             } else {
                 vm.ascending.toggle()
             }
@@ -71,7 +71,7 @@ extension ListHeader {
 
 struct ListHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ListHeader(vm: HomeViewModel(), name: "Market Cap", icon: "arrowtriangle.up.fill",
+        ListHeader(name: "Market Cap", icon: "arrowtriangle.up.fill",
                    coinFilterType: .hot)
     }
 }
