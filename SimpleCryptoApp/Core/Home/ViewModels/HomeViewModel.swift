@@ -13,7 +13,7 @@ import Combine
         @Published var coinType: CoinDataType = .hot
         @Published var ascending = false
         @Published var searchText = ""
-         
+
          @Published var selectedTab: SelectedTab = .crypto
 
         private let coinDataService = CoinDataService()
@@ -38,6 +38,8 @@ import Combine
                 } else {
                     return allCoins.sorted { $0.priceChangePercentage24H ?? 0.00  > $1.priceChangePercentage24H ?? 0.00}
                 }
+            case .portfolio:
+                return allCoins.filter { $0.currentHoldings != nil }
             }
         }
 
@@ -64,6 +66,17 @@ import Combine
                 }
                 .store(in: &cancellables)
 
+            $selectedTab
+                .sink { [weak self] tab in
+                    if tab == .wallet {
+                        self?.coinType = .portfolio
+                        return
+                     } else {
+                         self?.coinType = .hot
+                        return
+                     }
+                }
+                .store(in: &cancellables)
         }
 
         func updateCoins() {

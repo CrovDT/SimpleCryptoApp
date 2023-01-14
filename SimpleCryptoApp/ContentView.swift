@@ -23,7 +23,7 @@ struct ContentView: View {
                 }
                 .tag(SelectedTab.crypto)
 
-            Text("Wallet")
+            PortfolioView()
                 .tabItem {
                     Label("Wallet", systemImage: "wallet.pass")
                 }

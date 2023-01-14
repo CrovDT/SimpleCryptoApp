@@ -20,6 +20,8 @@ struct CoinRow: View {
              marketCap
         case .hot:
              hot
+        case .portfolio:
+            hot
         }
     }
     private var hot: some View {

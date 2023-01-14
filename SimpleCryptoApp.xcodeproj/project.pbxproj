@@ -20,6 +20,7 @@
 		4F6DA76C296E8E3E002734E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6DA76B296E8E3E002734E0 /* HomeViewModel.swift */; };
 		4F77DE8B29728DFD00A94C23 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77DE8A29728DFD00A94C23 /* SearchBar.swift */; };
 		4F77DE962972E3EA00A94C23 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77DE952972E3EA00A94C23 /* LocalFileManager.swift */; };
+		4F77DE982973361F00A94C23 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F77DE972973361F00A94C23 /* PortfolioView.swift */; };
 		4F8B61C2296DA8D300D4CAEB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B61C1296DA8D300D4CAEB /* Color.swift */; };
 		4F8B61C4296DE1FD00D4CAEB /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B61C3296DE1FD00D4CAEB /* Coin.swift */; };
 		4F8B61C6296DE5F800D4CAEB /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B61C5296DE5F800D4CAEB /* CoinDataService.swift */; };
@@ -48,6 +49,7 @@
 		4F6DA76B296E8E3E002734E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4F77DE8A29728DFD00A94C23 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		4F77DE952972E3EA00A94C23 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		4F77DE972973361F00A94C23 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		4F8B61C1296DA8D300D4CAEB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4F8B61C3296DE1FD00D4CAEB /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		4F8B61C5296DE5F800D4CAEB /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
@@ -120,6 +122,22 @@
 			path = InfoView;
 			sourceTree = "<group>";
 		};
+		4F77DE992973374400A94C23 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				4F77DE8A29728DFD00A94C23 /* SearchBar.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		4F77DE9A2973375700A94C23 /* CoinListView */ = {
+			isa = PBXGroup;
+			children = (
+				4FAD76AB2971E48F007275A4 /* CoinListView.swift */,
+			);
+			path = CoinListView;
+			sourceTree = "<group>";
+		};
 		4F8B61B8296DA76C00D4CAEB /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +186,8 @@
 		4F8B61BD296DA7BA00D4CAEB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4F77DE9A2973375700A94C23 /* CoinListView */,
+				4F77DE992973374400A94C23 /* SearchBar */,
 				4FAD76A1297153B7007275A4 /* CoinImage */,
 				4F37566D296FDB01005EF22A /* InfoView */,
 			);
@@ -188,12 +208,11 @@
 			children = (
 				4F6DA769296E8E29002734E0 /* Home.swift */,
 				4FAD76AD2971E743007275A4 /* SearchView.swift */,
-				4F77DE8A29728DFD00A94C23 /* SearchBar.swift */,
 				4F375675297001D2005EF22A /* BalanceView.swift */,
 				4F37567C29700D08005EF22A /* StaticListRow.swift */,
 				4F37567A29700B04005EF22A /* ListHeader.swift */,
-				4FAD76AB2971E48F007275A4 /* CoinListView.swift */,
 				4F37567F2970165E005EF22A /* CoinRow.swift */,
+				4F77DE972973361F00A94C23 /* PortfolioView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -340,6 +359,7 @@
 				4FAD76A029714C52007275A4 /* CoinImageService.swift in Sources */,
 				4F8B61C2296DA8D300D4CAEB /* Color.swift in Sources */,
 				4F77DE8B29728DFD00A94C23 /* SearchBar.swift in Sources */,
+				4F77DE982973361F00A94C23 /* PortfolioView.swift in Sources */,
 				4F375676297001D2005EF22A /* BalanceView.swift in Sources */,
 				4FAD76AC2971E48F007275A4 /* CoinListView.swift in Sources */,
 				4F37567B29700B04005EF22A /* ListHeader.swift in Sources */,

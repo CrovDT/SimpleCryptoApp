@@ -8,5 +8,5 @@
 import Foundation
 
 enum CoinDataType {
-    case hot, marketCap, price, dailyChange
+    case hot, marketCap, price, dailyChange, portfolio
 }
