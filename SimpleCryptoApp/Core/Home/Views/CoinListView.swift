@@ -16,6 +16,7 @@ struct CoinListView: View {
                         CoinRow(coin: coin)
                     }
                     .listRowSeparator(.hidden)
+                    .scrollIndicators(.hidden)
                 }
                 .listStyle(.plain)
                 .refreshable {

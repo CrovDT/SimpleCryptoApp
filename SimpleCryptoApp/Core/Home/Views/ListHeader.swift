@@ -32,6 +32,7 @@ struct ListHeader: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 7)
         .frame(height: 15)
+        .padding(.vertical, 7)
         .onTapGesture {
             if !show {
                 vm.coinType = coinFilterType
